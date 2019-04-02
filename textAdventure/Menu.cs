@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace kak
+namespace textAdventure
 {
     class Menu
     {
@@ -15,7 +15,7 @@ namespace kak
 
             string menu = "";
             string line;
-            StreamReader sr = new StreamReader("U:\\Software Development\\Projects\\Visual Studio\\kak\\mainmenu.txt");
+            StreamReader sr = new StreamReader("C:\\Users\\lbur212\\Documents\\Visual Studio 2017\\Projects\\textAdventure\\textAdventure\\mainMenu.txt");
             line = sr.ReadLine();
             while (line != null)
             {
@@ -35,7 +35,7 @@ namespace kak
 
             string menu = "";
             string line;
-            StreamReader sr = new StreamReader("U:\\Software Development\\Projects\\Visual Studio\\kak\\optionsmenu.txt");
+            StreamReader sr = new StreamReader("C:\\Users\\lbur212\\Documents\\Visual Studio 2017\\Projects\\textAdventure\\textAdventure\\optionsMenu.txt");
             line = sr.ReadLine();
             while (line != null)
             {
@@ -49,17 +49,16 @@ namespace kak
             return menu;
         }
 
-        public void mainMenuInput(string i, Map t)
+        public void mainMenuInput(string i)
         {
             switch (i)
             {
                 case "p":
                     Console.Clear();
-                    Console.WriteLine(t);
                     break;
                 case "o":
                     Console.WriteLine(optionsMenu());
-                    optionsMenuInput(Console.ReadLine(), t);
+                    optionsMenuInput(Console.ReadLine());
                     break;
                 case "e":
                     Environment.Exit(0);
@@ -70,13 +69,13 @@ namespace kak
             }
         }
 
-        public void optionsMenuInput(string i, Map t)
+        public void optionsMenuInput(string i)
         {
             switch (i)
             {
                 case "b":
                     Console.WriteLine(mainMenu());
-                    mainMenuInput(Console.ReadLine(), t);
+                    mainMenuInput(Console.ReadLine());
                     break;
                 default:
                     Console.WriteLine(optionsMenu());

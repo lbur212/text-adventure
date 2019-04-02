@@ -10,6 +10,12 @@ namespace textAdventure
     {
         static void Main(string[] args)
         {
+            Menu m = new Menu();
+
+            Console.WriteLine(m.mainMenu());
+            m.mainMenuInput(Console.ReadLine());
+            
+            Console.ReadKey();
         }
     }
 }
