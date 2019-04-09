@@ -63,8 +63,13 @@ namespace textAdventure
                 case "e":
                     Environment.Exit(0);
                     break;
+                case "r":
+                    Console.WriteLine(mainMenu());
+                    mainMenuInput(Console.ReadLine());
+                    break;
                 default:
                     Console.WriteLine(mainMenu());
+                    mainMenuInput(Console.ReadLine());
                     break;
             }
         }
@@ -79,6 +84,7 @@ namespace textAdventure
                     break;
                 default:
                     Console.WriteLine(optionsMenu());
+                    optionsMenuInput(Console.ReadLine());
                     break;
             }
         }
